@@ -98,9 +98,9 @@ exports.getByIdToy = async(req,res) => {
         try {
             const deleteId = req.params.idDel;
             console.log(await owner(deleteId,userId))
-            if(owner(deleteId,userId)==true) {
+            if(owner(deleteId,userId)) {
             data = await Toy.deleteOne({_id:deleteId})
-            res.status(201).send({data:"hi"});
+            res.status(201).send(data);
         }
             else 
             res.status(201).send({data:"This toy belongs to another user so you cannot delete it."});
@@ -131,5 +131,25 @@ exports.getByIdToy = async(req,res) => {
    
     }
 
-
+    //bonus
+    exports.funcMinMax = async (req, res) => {
+        console.log("hi")
+        try {
+          const perPage = req.query.perPage || 10;
+          const page = req.query.page || 1;
+          const min = req.query.min;
+          const max = req.query.max;
+          
+          console.log(min, max);
+          const data = await Toy.find({
+            $and: [{ price: { $gt: min } }, { price: { $lt: max } }],
+          })
+            .limit(perPage)
+            .skip((page - 1) * perPage);
+          res.send(data);
+        } catch (err) {
+          console.log(err);
+          next(err);
+        }
+      };
    

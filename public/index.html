@@ -141,7 +141,7 @@
                         <td>/toys</td>
                         <td class="text-center">none</td>
                         <td>Get a list of all the toys, will present 10 results per page,  <a class="text-decoration-none"
-                            href="http://localhost:3000/api/v1/toys">if
+                            href="/api/v1/toys">if
                             you want to see the list of the toys.</a></td>
                     </tr>
                     <tr>
@@ -150,7 +150,7 @@
                         <td class="text-center">none</td>
                         <td>search for a toy by searching follwing name or info after the "s=", it will present 10
                             results per page, <a class="text-decoration-none"
-                            href="http://localhost:3000/api/v1/toys/search?s=bal">if
+                            href="/api/v1/toys/search?s=bal">if
                             you want to see the list of the toys.</a>
                         </td>
                     </tr>
@@ -161,7 +161,7 @@
                         <td class="text-center">none</td>
                         <td>Get a list of all the toys in that<strong>category</strong>, it will present 10 results per
                             page, <a class="text-decoration-none"
-                            href="http://localhost:3000/api/v1/toys/Construction Toys">if
+                            href="/api/v1/toys/Construction Toys">if
                             you want to see the list of the toys.</a></td>
                     </tr>
                     <tr>
@@ -170,7 +170,7 @@
                         <td class="text-center">none</td>
                         <td>Get the toy with that id, it will present 10 results per
                             page, <a class="text-decoration-none"
-                            href="http://localhost:3000/api/v1/toys/byId/656cf5aa86010b971e04f8bc">if
+                            href="/api/v1/toys/byId/656cf5aa86010b971e04f8bc">if
                             you want to see the toy.</a></td>
                     </tr>
                     <tr>
@@ -214,6 +214,15 @@
                         <td>/toys/ID</td>
                         <td class="text-center">none</td>
                         <td>Delete a toy from the data base, <strong>You need a token for this query.</strong></td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>/toys/prices?min=40&max=100
+                        </td>
+                        <td class="text-center">none</td>
+                        <td>Get a list of the toys by min & max , it will present 10 results per page,  <a class="text-decoration-none"
+                            href="/api/v1/toys/prices?min=40&max=100">if
+                            you want to see the result.</a></td>
                     </tr>
                 </tbody>
             </table>
